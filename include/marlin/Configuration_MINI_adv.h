@@ -1531,7 +1531,7 @@
     #define INTERPOLATE true // Interpolate X/Y/Z_MICROSTEPS to 256
 
     #if AXIS_IS_TMC(X)
-        #define X_CURRENT 350 // (mA) RMS current. Multiply by 1.414 for peak current.
+        #define X_CURRENT 550 // (mA) RMS current. Multiply by 1.414 for peak current.
         #define X_MICROSTEPS 16 // 0..256
         #define X_RSENSE 0.22
     #endif
@@ -1543,7 +1543,7 @@
     #endif
 
     #if AXIS_IS_TMC(Y)
-        #define Y_CURRENT 350
+        #define Y_CURRENT 550
         #define Y_MICROSTEPS 16
         #define Y_RSENSE 0.22
     #endif
@@ -1555,8 +1555,8 @@
     #endif
 
     #if AXIS_IS_TMC(Z)
-        #define Z_CURRENT 350 //530//650
-        #define Z_MICROSTEPS 8 //16
+        #define Z_CURRENT 500 //530//650
+        #define Z_MICROSTEPS 16 //16
         #define Z_RSENSE 0.22
     #endif
 
@@ -1573,7 +1573,7 @@
     #endif
 
     #if AXIS_IS_TMC(E0)
-        #define E0_CURRENT 400 //520
+        #define E0_CURRENT 500 //520
         #define E0_MICROSTEPS 16 //32
         #define E0_RSENSE 0.22
     #endif
@@ -1786,7 +1786,7 @@
 
     #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
         #if X_DRIVER_TYPE == TMC2209
-            #define X_STALL_SENSITIVITY 130
+            #define X_STALL_SENSITIVITY 85
         #endif
 
         #if Y_DRIVER_TYPE == TMC2209

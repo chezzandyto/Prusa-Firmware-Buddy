@@ -681,7 +681,7 @@
  */
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 280 } //E0 280 295
 #define DEFAULT_AXIS_STEPS_PER_UNIT \
-    { 100, 100, 400, 325 } //E0 280 295
+    { 100, 100, 400, 133 } //E0 280 295
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 800, 800, 3200, 1120 } //E0 280 295
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 1120 } //E0 280 295
 
@@ -864,7 +864,7 @@
  *    (0,0)
  */
 #define NOZZLE_TO_PROBE_OFFSET \
-    { -29, -3, 0 }
+    { -30, -4, 0 }
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 5
@@ -908,7 +908,7 @@
  */
 #define Z_CLEARANCE_BEFORE_PROBING 5 // Z Clearance before first MBL probe
 #define Z_CLEARANCE_DEPLOY_PROBE 0 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES 1 // Z Clearance between probe points
+#define Z_CLEARANCE_BETWEEN_PROBES 2 // Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE 0.5 // Z Clearance between multiple probes
 #define Z_AFTER_PROBING 2 // Z position after probing is done
 
@@ -1008,23 +1008,23 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 180
-#define Y_BED_SIZE 180
-#define Z_SIZE 185
+#define X_BED_SIZE 219
+#define Y_BED_SIZE 220
+#define Z_SIZE 190
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -2
-#define Y_MIN_POS -3
+#define X_MIN_POS -1
+#define Y_MIN_POS -4
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
 #ifdef USE_PRUSA_EEPROM_AS_SOURCE_OF_DEFAULT_VALUES
-    #define DEFAULT_Z_MAX_POS 185
+    #define DEFAULT_Z_MAX_POS 190
     #define Z_MIN_LEN_LIMIT 1
     #define Z_MAX_LEN_LIMIT 10000
     #define Z_MAX_POS (get_z_max_pos_mm())
 #else
-    #define Z_MAX_POS 185
+    #define Z_MAX_POS 190
 #endif
 
 /// Distance between start of the axis to the position where ordinary movement is allowed
@@ -1312,7 +1312,7 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS 180.4
+#define MANUAL_X_HOME_POS 219.4
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0
 
