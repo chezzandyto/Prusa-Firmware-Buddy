@@ -71,11 +71,11 @@ static constexpr SelftestFansConfig fans_configs[] = {
 
 const AxisConfig_t selftest::Config_XAxis = {
     .partname = "X-Axis",
-    .length = 186,
+    .length = 220,
     .fr_table_fw = XYfr_table,
     .fr_table_bw = XYfr_table,
-    .length_min = 178,
-    .length_max = 188,
+    .length_min = 212,
+    .length_max = 222,
     .axis = X_AXIS,
     .steps = xy_fr_table_size * 2,
     .movement_dir = -1,
@@ -85,11 +85,11 @@ const AxisConfig_t selftest::Config_XAxis = {
 
 const AxisConfig_t selftest::Config_YAxis = {
     .partname = "Y-Axis",
-    .length = 185,
+    .length = 226,
     .fr_table_fw = XYfr_table,
     .fr_table_bw = XYfr_table,
-    .length_min = 179,
-    .length_max = 189,
+    .length_min = 220,
+    .length_max = 229,
     .axis = Y_AXIS,
     .steps = xy_fr_table_size * 2,
     .movement_dir = 1,
@@ -102,7 +102,7 @@ static const AxisConfig_t Config_ZAxis = {
     .length = get_z_max_pos_mm(),
     .fr_table_fw = Zfr_table_fw,
     .fr_table_bw = Zfr_table_bw,
-    .length_min = get_z_max_pos_mm() - 4,
+    .length_min = get_z_max_pos_mm() - 5,
     .length_max = get_z_max_pos_mm() + 6,
     .axis = Z_AXIS,
     .steps = z_fr_tables_size,
@@ -126,7 +126,7 @@ static const HeaterConfig_t Config_HeaterNozzle[] = {
         .start_temp = 40,
         .undercool_temp = 37,
         .target_temp = 290,
-        .heat_min_temp = 130,
+        .heat_min_temp = 120,
         .heat_max_temp = 190,
     }
 };
@@ -145,7 +145,7 @@ static const HeaterConfig_t Config_HeaterBed = {
     .start_temp = 40,
     .undercool_temp = 39,
     .target_temp = 110,
-    .heat_min_temp = 50,
+    .heat_min_temp = 45,
     .heat_max_temp = 65,
 };
 
