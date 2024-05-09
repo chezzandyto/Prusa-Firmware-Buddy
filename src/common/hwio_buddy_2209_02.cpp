@@ -459,7 +459,7 @@ void digitalWrite(uint32_t marlinPin, uint32_t ulVal) {
         // PWM value of 80 roughly translates to 4k RPM, further testing my find better value, thus far this seems precise enough plus it is the value used by MINI which uses the same fans
         Fans::heat_break(0).setPWM(ulVal ? (config_store().has_alt_fans.get() ? 80 : _pwm_analogWrite_max) : 0);
 #else
-        Fans::heat_break(0).setPWM(ulVal ? 80 : 0);
+        Fans::heat_break(0).setPWM(ulVal ? 200 : 0);
 #endif
         return;
     case MARLIN_PIN(FAN):
