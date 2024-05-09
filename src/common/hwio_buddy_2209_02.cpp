@@ -485,10 +485,8 @@ void digitalWrite(uint32_t marlinPin, uint32_t ulVal) {
 #elif PRINTER_IS_PRUSA_MK3_5()
         // PWM value of 80 roughly translates to 4k RPM, further testing my find better value, thus far this seems precise enough plus it is the value used by MINI which uses the same fans
         Fans::heat_break(0).setPWM(ulVal ? (config_store().has_alt_fans.get() ? 80 : _pwm_analogWrite_max) : 0);
-#elif (PRINTER_IS_PRUSA_XL() || PRINTER_IS_PRUSA_MINI())
-        Fans::heat_break(0).setPWM(ulVal ? 80 : 0);
 #else
-    #error
+        Fans::heat_break(0).setPWM(ulVal ? 200 : 0);
 #endif
         return;
     case MARLIN_PIN(FAN):
