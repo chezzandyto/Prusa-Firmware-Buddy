@@ -755,7 +755,7 @@ int16_t Temperature::getHeaterPower(const heater_ind_t heater_id) {
         // PWM value of 80 roughly translates to 4k RPM, further testing my find better value, thus far this seems precise enough plus it is the value used by MINI which uses the same fans
         case 0: Fans::heat_break(0).set_pwm(fan_on ? (config_store().has_alt_fans.get() ? 80 : 255) : 0);
 #else
-        case 0: Fans::heat_break(0).set_pwm(fan_on ? 80 : 0);
+        case 0: Fans::heat_break(0).set_pwm(fan_on ? 255 : 0);
 #endif
         #endif
         #if HAS_AUTO_FAN_1
